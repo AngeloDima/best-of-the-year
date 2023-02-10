@@ -1,6 +1,9 @@
 package com.EssJava.org.Controller;
 
+import java.time.LocalTime;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,7 +14,10 @@ public class VistaCont {
 	//prima Pagina  HOME
 	
 	@GetMapping("/home")
-	public String home() {
-		return "Home";
-	}
+	  public String home(Model model) {
+	    model.addAttribute("ora", LocalTime.now());
+	    return "home";
+	  }
 }
+
+
