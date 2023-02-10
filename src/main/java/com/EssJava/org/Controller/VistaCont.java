@@ -15,7 +15,7 @@ public class VistaCont {
 	
 	@GetMapping("/home")
 	  public String home(Model model) {
-	    model.addAttribute("ora", LocalTime.now());
+	    model.addAttribute("Nome", "Angelo");
 	    return "home";
 	  }
 }
