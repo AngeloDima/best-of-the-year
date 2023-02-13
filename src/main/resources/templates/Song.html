@@ -20,16 +20,20 @@
 	<div class="container pt-4">
 		<div class="row text-center">
 		 	<div class="col-12 text-center">
-			 	<h1 >Best of by ...</h1>
+			 	<h1 >Best of Song</h1>
 	  			<h1 th:text=${Nome}></h1>
 		 	</div>
+		 	
+		 	
 		 	
 		<div class="col-12 text-center pt-4 bg-light">
 		
 		  <div class="row mb-4 border border-dark">
-		    <div class="col-sm-8 mx-auto ">
-		      <img class="img-fluid img-thumbnail" alt="" src="ima/img-java.jpg">
-		    </div>
+			<div class="col-sm-8 mx-auto ">
+				<ul>
+					<li th:each="song : ${song}" th:text="${song.titolo}"></li>
+				</ul>
+			</div>
 		  </div>
 		  
 		  

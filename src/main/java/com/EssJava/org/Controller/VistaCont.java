@@ -26,12 +26,7 @@ public class VistaCont {
 	
 
 	
-	@GetMapping("/song")
-	  public String song(Model m) {
-	    List<Song> song = getBestSong();
-	    m.addAttribute("titolo", song.toString());
-	    return "song";
-	  }
+
 	
 	@GetMapping("/movies")
 	  public String movies(Model m) {
@@ -54,6 +49,14 @@ public class VistaCont {
 	}
 	
 	
+	
+	@GetMapping("/song")
+	  public String song(Model m) {
+	    List<Song> song = getBestSong();
+	    m.addAttribute("song", song);
+	    return "song";
+	  }
+	
 	private List<Song> getBestSong() {
 		
 		List<Song> song = new ArrayList<>();
@@ -64,7 +67,7 @@ public class VistaCont {
 		Song song2 = new Song("Angelo e song", 2);
 		song.add(song2);
 		
-		Song song3 = new Song("Angelo e song", 2);
+		Song song3 = new Song("Angelo e song23", 2);
 		song.add(song3);
 		return song;		
 	}
