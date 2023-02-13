@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+.padd{
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+.img-thumbnail{
+	max-height: 80%;
+	
+}

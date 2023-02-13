@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
+  link<link rel="stylesheet" type="text/css" href="css/home.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title></title>
 </head>
@@ -16,11 +17,15 @@
 	</nav>
 
 
-	<div class="container">
+	<div class="container pt-4">
 		<div class="row">
 		 	<div class="col-12 text-center">
-			 	<h1 >Best of the year by</h1>
+			 	<h1 >Best of by ...</h1>
 	  			<h1 th:text=${Nome}></h1>
+		 	</div>
+		 	
+		 	<div class="col-12 text-center pt-4">
+		 		<img class="img-fluid img-thumbnail" alt="" src="ima/img-java.jpg">
 		 	</div>
 		</div>
 	</div>
