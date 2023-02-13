@@ -50,10 +50,8 @@ public class VistaCont {
 		
 		Movie movie2 = new Movie("Angelo e MIT", 2);
 		movies.add(movie1);
-		return movies;
-		
+		return movies;	
 	}
-	
 	
 	
 	private List<Song> getBestSong() {
@@ -65,8 +63,10 @@ public class VistaCont {
 		
 		Song song2 = new Song("Angelo e song", 2);
 		song.add(song2);
-		return song;
 		
+		Song song3 = new Song("Angelo e song", 2);
+		song.add(song3);
+		return song;		
 	}
 	
 
