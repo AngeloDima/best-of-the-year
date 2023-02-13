@@ -8,79 +8,74 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.EssJava.org.Model.Movie;
+import com.EssJava.org.Model.Song;
+
+
 
 @Controller
 @RequestMapping("/")
 public class VistaCont {
 	
 	
-	//prima Pagina  HOME
+	@GetMapping()
+	public String home(Model model) {  
+		String name = "Angelo";
+		model.addAttribute("name", name);
+		return "index"; // nome file che voglio restituire
+	}
 	
-	@GetMapping("/home")
-	  public String home(Model model) {
-	    model.addAttribute("Nome", "Angelo");
-	    return "home";
-	  }
-	
-	
-
-	
-
-	
+	private List<Movie> getBestMovie(){
+		List<Movie> moviesList = new ArrayList<>(); 
+		Movie movie1= new Movie(1, "Gomorra");
+		Movie movie2= new Movie(2, "Il Padrino");
+		Movie movie3= new Movie(3, "la bella e la bestia");
+		moviesList.add(movie1);
+		moviesList.add(movie2);
+		moviesList.add(movie3);
+		return moviesList;
+		
+	}
 	@GetMapping("/movies")
-	  public String movies(Model m) {
-	    List<Movie> movies = getBestMovies();
-	    m.addAttribute("movies", movies);
-	    return "movies";
-	  }
-	
-	
-	private List<Movie> getBestMovies() {
-		
-		List<Movie> movies = new ArrayList<>();
-		
-		Movie movie1 = new Movie("Il ritorno di Angelo", 1);
-		movies.add(movie1);
-		
-		Movie movie2 = new Movie("Angelo e MIT", 2);
-		movies.add(movie2);
-		return movies;	
+	public String showMovies(Model model) {
+		List<Movie> movies= getBestMovie();
+		model.addAttribute("films" , movies);
+		return "movies";
 	}
 	
-	
-	
-	@GetMapping("/song")
-	  public String song(Model m) {
-	    List<Song> song = getBestSong();
-	    m.addAttribute("song", song);
-	    return "song";
-	  }
-	
-	private List<Song> getBestSong() {
-		
-		List<Song> song = new ArrayList<>();
-		
-		Song song1 = new Song("Il ritorno di song", 1);
-		song.add(song1);
-		
-		Song song2 = new Song("Angelo e song", 2);
-		song.add(song2);
-		
-		Song song3 = new Song("Angelo e song23", 2);
-		song.add(song3);
-		return song;		
+	private List<Song> getBestSong(){
+		List<Song> songsList = new ArrayList<>(); 
+		Song song1= new Song(1, "i carusi do sud");
+		Song song2= new Song(2, "oro e argento");
+		songsList.add(song1);
+		songsList.add(song2);
+		return songsList;
 	}
 	
+	@GetMapping("/songs")
+	public String showSong(Model model) {
+		List<Song> songs= getBestSong();
+		model.addAttribute("canzoni" , songs);
+		return "songs";
+	}
 	
-	@GetMapping("/song/canzone1")
-	  public String canzone(Model m) {
-	    List<Song> song = getBestSong();
-	    m.addAttribute("song", song);
-	    return "canzone1";
-	  }
+	@GetMapping("/songs/{id}") 	
+	public String dettaglioCanzone(Model model, @PathVariable("id") String id ) {
+		int idSong= Integer.parseInt(id)-1;
+		model.addAttribute("song", getBestSong().get(idSong));
+		return "canzone";
+	}
+	
+	@GetMapping("/movies/{id}") 	
+	public String dettaglioFilm(Model model, @PathVariable("id") String id ) {
+		int idFilm= Integer.parseInt(id)-1;
+		model.addAttribute("film", getBestMovie().get(idFilm));
+		return "film";
+	}
 
 
 }
-
-
