@@ -2,10 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>asd</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+<title>Boot</title>
 </head>
 <body>
-	<h1>Ciao Sono Movies</h1>
+	<h1 class="text-info">Ciao Sono Movies</h1>
 	<h3 th:text=${titolo}></h3>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>
