@@ -31,6 +31,13 @@ public class VistaCont {
 	    return "movies";
 	  }
 	
+	@GetMapping("/song")
+	  public String song(Model m) {
+	    List<Song> song = getBestSong();
+	    m.addAttribute("titolo", song.toString());
+	    return "song";
+	  }
+	
 	
 	
 	
@@ -44,6 +51,21 @@ public class VistaCont {
 		Movie movie2 = new Movie("Angelo e MIT", 2);
 		movies.add(movie1);
 		return movies;
+		
+	}
+	
+	
+	
+	private List<Song> getBestSong() {
+		
+		List<Song> song = new ArrayList<>();
+		
+		Song song1 = new Song("Il ritorno di song", 1);
+		song.add(song1);
+		
+		Song song2 = new Song("Angelo e song", 2);
+		song.add(song2);
+		return song;
 		
 	}
 	

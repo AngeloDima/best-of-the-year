@@ -1,9 +1,9 @@
-package com.EssJava.org;
+package com.EssJava.org.Controller;
 
-public class movies {
+public class Song {
 	String titolo;
 	int id;
-	public movies(String titolo, int id) {
+	public Song(String titolo, int id) {
 		this.titolo = titolo;
 		this.id = id;
 	}
@@ -19,4 +19,10 @@ public class movies {
 	public void setId(int id) {
 		this.id = id;
 	}
+	@Override
+	public String toString() {
+		return "Song [titolo=" + titolo + ", id=" + id + "]";
+	}
+	
+	
 }
