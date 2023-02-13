@@ -24,12 +24,7 @@ public class VistaCont {
 	  }
 	
 	
-	@GetMapping("/movies")
-	  public String movies(Model m) {
-	    List<Movie> movies = getBestMovies();
-	    m.addAttribute("titolo", movies.toString());
-	    return "movies";
-	  }
+
 	
 	@GetMapping("/song")
 	  public String song(Model m) {
@@ -38,7 +33,12 @@ public class VistaCont {
 	    return "song";
 	  }
 	
-	
+	@GetMapping("/movies")
+	  public String movies(Model m) {
+	    List<Movie> movies = getBestMovies();
+	    m.addAttribute("movies", movies);
+	    return "movies";
+	  }
 	
 	
 	private List<Movie> getBestMovies() {
@@ -49,7 +49,7 @@ public class VistaCont {
 		movies.add(movie1);
 		
 		Movie movie2 = new Movie("Angelo e MIT", 2);
-		movies.add(movie1);
+		movies.add(movie2);
 		return movies;	
 	}
 	
