@@ -72,6 +72,13 @@ public class VistaCont {
 		return song;		
 	}
 	
+	
+	@GetMapping("/song/canzone1")
+	  public String canzone(Model m) {
+	    List<Song> song = getBestSong();
+	    m.addAttribute("song", song);
+	    return "canzone1";
+	  }
 
 
 }

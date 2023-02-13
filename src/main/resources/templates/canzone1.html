@@ -30,11 +30,7 @@
 		
 		  <div class="row mb-4 border border-dark">
 			<div class="col-sm-8 mx-auto ">
-				<ul>
-					<li>
-					<a href="/song/canzone1" th:each="song : ${song}" th:text="${song.titolo}"></a>
-					</li>
-				</ul>
+				<h3 th:each="song : ${song}" th:text="${song.titolo}"></h3>
 			</div>
 		  </div>
 		  
